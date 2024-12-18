@@ -9,11 +9,13 @@ import {
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, FormsModule, NzCollapseModule],
+  imports: [CommonModule, FormsModule, NzCollapseModule, NzIconModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   animations: [
@@ -54,10 +56,35 @@ export class FooterComponent {
     {
       active: true,
       name: 'This is panel header 1',
-      disabled: false
+      disabled: false,
     },
   ];
   activeCollapse: boolean = false;
   activeContact: boolean = false;
   activeService: boolean = false;
+  isAuthPage: boolean = false;
+  activeUrl: string = '';
+
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        const url = val.url || '';
+        this.activeUrl = url;
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    if (this.activeUrl.startsWith('/login')) {
+      this.isAuthPage = true;
+    }
+    else if (this.activeUrl.startsWith('/register')) {
+      this.isAuthPage = true;
+    }
+    else if (this.activeUrl.startsWith('/forgot-password')) {
+      this.isAuthPage = true;
+    } else {
+      this.isAuthPage = false;
+    }
+  }
 }

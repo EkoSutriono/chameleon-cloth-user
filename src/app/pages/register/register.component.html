@@ -1,0 +1,23 @@
+<div class="text-center py-5 mb-[10%]">
+        <span class="text-[#606060] font-bold text-xl">Sign Up</span>
+        <div class="flex justify-center mt-4">
+            <form nz-form [formGroup]="validateForm" class="login-form col-10 col-md-5 col-lg-3 col-xl-2" (ngSubmit)="submitForm()">
+                <nz-form-item>
+                  <nz-form-control nzErrorTip="Please input your email!">
+                    <nz-input-group nzPrefixIcon="mail" class="rounded" nzSize="large">
+                      <input type="text" nz-input formControlName="email" placeholder="Email" />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+                <div class="flex w-100">
+                    <button nz-button class="login-form-button login-form-margin bg-black text-white rounded-lg w-100 h-[40px]">Sign Up</button>
+                </div>
+              </form>
+        </div>
+        <div class="flex justify-center">
+            <div class="mt-5 flex flex-col col-10 col-md-5 col-lg-3 col-xl-2">
+                <span class="text-[#525252] text-start mt-2">Sudah punya akun CHAMELEON CLOTH ?</span>
+                <a href="/login" class="text-black font-bold text-start">Sign In</a>
+            </div>
+        </div>
+</div>

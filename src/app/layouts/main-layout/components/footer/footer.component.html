@@ -1,123 +1,144 @@
-<div class="bg-black flex justify-center text-center flex-col text-white">
-  <span class="text-lg font-bold">DAFTAR DENGAN EMAIL</span>
-  <span
-    >Jadi yang pertama untuk mendapatkan produk terbaru dan penawaran dari
-    CHAMELEON CLOTH</span
-  >
-  <span class="flex justify-center mt-4">
-    <button class="btn btn-sm btn-ghost">GABUNG SEKARANG</button>
-  </span>
+<div class="bg-black flex justify-center text-center flex-col text-white" [ngClass]="!isAuthPage ? 'py-5':'p-1'">
+  <div *ngIf="!isAuthPage">
+    <span class="text-lg font-bold">DAFTAR DENGAN EMAIL</span>
+    <div class="flex justify-center">
+      <span class="col-10"
+        >Jadi yang pertama untuk mendapatkan produk terbaru dan penawaran dari
+        CHAMELEON CLOTH</span
+      >
+    </div>
+    <span class="flex justify-center mt-4">
+      <button class="btn btn-sm btn-ghost">GABUNG SEKARANG</button>
+    </span>
+  </div>
   <!-- KATEGORI -->
-   <div class="mt-5">
-       <div
-         class="flex flex-row justify-center"
-         (click)="activeCollapse = !activeCollapse"
-       >
-         <div class="col-8 flex flex-row justify-between">
-           <span class="flex justify-start font-bold">KATEGORI</span>
-           <div class="flex justify-end">
-             <img
-               [src]="
-                 !activeCollapse
-                   ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
-                   : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
-               "
-               alt="show-close"
-             />
-           </div>
-         </div>
-       </div>
-     
-       <div class="flex flex-row justify-center mt-2">
-         <div
-           [@collapseExpand]="activeCollapse ? 'expanded' : 'collapsed'"
-           class="mb-4 col-8"
-         >
-           <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
-             <li *ngFor="let items of categories; let i = index" class="list-none">
-               <a>{{ items.name }}</a>
-             </li>
-           </div>
-         </div>
-       </div>
-   </div>
-  <!-- KONTAK -->
-   <div>
-       <div
-         class="flex flex-row justify-center"
-         (click)="activeContact = !activeContact"
-       >
-         <div class="col-8 flex flex-row justify-between">
-           <span class="flex justify-start font-bold uppercase"
-             >Kontak & Alamat</span
-           >
-           <div class="flex justify-end">
-             <img
-               [src]="
-                 !activeContact
-                   ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
-                   : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
-               "
-               alt="show-close"
-             />
-           </div>
-         </div>
-       </div>
-     
-       <div class="flex flex-row justify-center mt-2">
-         <div
-           [@collapseExpand]="activeContact ? 'expanded' : 'collapsed'"
-           class="mb-4 col-8"
-         >
-           <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
-             <span>
-               CHAMELEON CLOTH <br />
-               Jl. Patimuan - Kedungreja, Cinyawang, Rt.02/03, Kec.Patimuan - Cilacap
-               53264 <br />
-               WhatsApp : 083116200500 (08:00 AM - 05:00 PM)
-             </span>
-           </div>
-         </div>
-       </div>
-   </div>
-  <!-- SERVICE -->
-   <div>
-       <div
-         class="flex flex-row justify-center"
-         (click)="activeService = !activeService"
-       >
-         <div class="col-8 flex flex-row justify-between">
-           <span class="flex justify-start font-bold uppercase">Layanan</span>
-           <div class="flex justify-end">
-             <img
-               [src]="
-                 !activeService
-                   ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
-                   : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
-               "
-               alt="show-close"
-             />
-           </div>
-         </div>
-       </div>
-     
-       <div class="flex flex-row justify-center mt-2">
-         <div
-           [@collapseExpand]="activeService ? 'expanded' : 'collapsed'"
-           class="mb-4 col-8"
-         >
-           <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
-             <a href="https://chameleoncloth.com/panduan/pemesanan">
-               Panduan Pemesanan
-             </a>
-           </div>
-         </div>
-       </div>
-   </div>
-</div>
+  <div class="mt-5">
+    <div
+      class="flex flex-row justify-center"
+      (click)="activeCollapse = !activeCollapse"
+    >
+      <div class="col-8 flex flex-row justify-between">
+        <span class="flex justify-start font-bold">KATEGORI</span>
+        <div class="flex justify-end">
+          <img
+            [src]="
+              !activeCollapse
+                ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
+                : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
+            "
+            alt="show-close"
+          />
+        </div>
+      </div>
+    </div>
 
-<div
-         class="flex flex-row justify-center"
-       >
-           <hr class="col-8">
+    <div class="flex flex-row justify-center mt-2">
+      <div
+        [@collapseExpand]="activeCollapse ? 'expanded' : 'collapsed'"
+        class="col-8"
+      >
+        <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
+          <li *ngFor="let items of categories; let i = index" class="list-none">
+            <a>{{ items.name }}</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- KONTAK -->
+  <div class="mt-2">
+    <div
+      class="flex flex-row justify-center"
+      (click)="activeContact = !activeContact"
+    >
+      <div class="col-8 flex flex-row justify-between">
+        <span class="flex justify-start font-bold uppercase"
+          >Kontak & Alamat</span
+        >
+        <div class="flex justify-end">
+          <img
+            [src]="
+              !activeContact
+                ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
+                : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
+            "
+            alt="show-close"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-center mt-2">
+      <div
+        [@collapseExpand]="activeContact ? 'expanded' : 'collapsed'"
+        class="col-8"
+      >
+        <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
+          <span>
+            CHAMELEON CLOTH <br />
+            Jl. Patimuan - Kedungreja, Cinyawang, Rt.02/03, Kec.Patimuan -
+            Cilacap 53264 <br />
+            WhatsApp : 083116200500 (08:00 AM - 05:00 PM)
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SERVICE -->
+  <div class="mt-2">
+    <div
+      class="flex flex-row justify-center"
+      (click)="activeService = !activeService"
+    >
+      <div class="col-8 flex flex-row justify-between">
+        <span class="flex justify-start font-bold uppercase">Layanan</span>
+        <div class="flex justify-end">
+          <img
+            [src]="
+              !activeService
+                ? 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/add-circle.svg'
+                : 'https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/close-circle.svg'
+            "
+            alt="show-close"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-center mt-2">
+      <div
+        [@collapseExpand]="activeService ? 'expanded' : 'collapsed'"
+        class="col-8"
+      >
+        <div class="text-start text-sm flex flex-col gap-2 text-[#ececec]">
+          <a href="https://chameleoncloth.com/panduan/pemesanan">
+            Panduan Pemesanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+      class="flex flex-row justify-center mb-3 mt-2"
+    >
+      <div class="col-8 flex flex-row justify-between">
+        <span class="flex justify-start gap-3">
+          <a href="https://www.instagram.com/chameleoncloth.co.id" target="_blank">
+            <span nz-icon nzType="instagram" nzTheme="outline" class="text-[#919191] text-[20px]"></span>
+          </a>
+          <a href="https://wa.me/6283116200500" target="_blank">
+            <span nz-icon nzType="whats-app" nzTheme="outline" class="text-[#919191] text-[20px]"></span>
+          </a>
+        </span>
+      </div>
+    </div>
+
+  <div class="flex justify-center mt-4">
+    <div class="border-t-[1px] border-white col-8"></div>
+  </div>
+  
+  <div class="text-center text-[#919191] mt-3 mb-3 font-bold">
+    © All Right Reserved
+  </div>
 </div>

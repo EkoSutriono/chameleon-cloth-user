@@ -1,0 +1,36 @@
+<div class="text-center py-5">
+    <span class="text-[#606060] font-bold text-xl">Sign in for faster checkout.</span>
+    <div class="flex justify-center mt-4">
+        <form nz-form [formGroup]="validateForm" class="login-form col-10 col-md-5 col-lg-3" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your username!">
+                <nz-input-group nzPrefixIcon="user" class="rounded" nzSize="large">
+                  <input type="text" nz-input formControlName="email" placeholder="Username" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-input-group nzPrefixIcon="lock" class="rounded" nzSize="large">
+                  <input type="password" nz-input formControlName="password" placeholder="Password" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <div class="flex justify-end">
+                <button nz-button class="login-form-button login-form-margin bg-black text-white rounded-lg w-[100px] h-[40px]">Log in</button>
+            </div>
+          </form>
+    </div>
+    <div class="flex justify-center">
+        <div class="mt-5 flex flex-col col-10 col-md-5 col-lg-3">
+            <a href="/forgot-password" class="text-black">Lupa Password?</a>
+            <span class="text-[#525252] text-start mt-2">Belum punya akun CHAMELEON CLOTH ?</span>
+            <a href="/register" class="text-black font-bold text-start">Sign Up</a>
+            <div class="mt-5 text-start">
+                <span class="text-[#525252] text-start mt-2">Perlu bantuan? </span>
+                <a href="https://wa.me/6283116200500" target="_blank" class="text-black text-start hover:underline">Chat Sekarang</a>
+                <span class="text-[#525252] text-start mt-2"> dengan customer service kami di WhatsApp 083116200500</span>
+            </div>
+        </div>
+    </div>
+</div>

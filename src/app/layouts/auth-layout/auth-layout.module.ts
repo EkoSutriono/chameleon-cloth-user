@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainLayoutRoutingModule } from './main-layout-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { AuthLayoutRoutingModule } from './auth-layout-routing.module';
+import { AuthLayoutComponent } from './auth-layout.component';
+import { LoginComponent } from '../../pages/login/login.component';
 
 @NgModule({
   declarations: [
   ],
   imports: [
+    LoginComponent,
+    AuthLayoutComponent,
     CommonModule,
-    MainLayoutRoutingModule,
+    AuthLayoutRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     RouterOutlet,
   ],
 })
-export class MainLayoutModule {}
+export class AuthLayoutModule {}
