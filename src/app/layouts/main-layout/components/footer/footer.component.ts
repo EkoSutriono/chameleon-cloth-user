@@ -7,11 +7,13 @@ import {
   animate,
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, NzCollapseModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   animations: [
@@ -48,5 +50,14 @@ export class FooterComponent {
     { name: 'Setelan' },
     { name: 'Vest' },
   ];
+  panels = [
+    {
+      active: true,
+      name: 'This is panel header 1',
+      disabled: false
+    },
+  ];
   activeCollapse: boolean = false;
+  activeContact: boolean = false;
+  activeService: boolean = false;
 }
