@@ -1,0 +1,20 @@
+<div>
+    <div class="bg-black text-center text-white text-[25px] font-bold py-5">
+        Best Seller
+    </div>
+    <div class="flex lg:justify-center py-5 gap-3 lg:overflow-x-hidden overflow-x-auto sm:overflow-x-scroll">
+        <div *ngFor="let items of listProduct; let i = index" class="bg-white w-[320px] shadow border-0 flex-shrink-0 rounded-md">
+            <figure class="px-2 pt-2">
+                <img
+                    [src]="items.photo"
+                    [alt]="items.name"
+                    class="rounded-xl min-h-[200px]" />
+            </figure>
+            <div class="card-body py-0 px-3 mt-1 mb-2">
+                <span class="uppercase text-sm font-bold inline-block align-top min-h-[40px]">
+                    {{items.name}}</span>
+                <button class="btn btn-sm rounded-lg bg-black text-white col-5 mb-2">Shop Now</button>
+            </div>
+        </div>
+    </div>
+</div>
