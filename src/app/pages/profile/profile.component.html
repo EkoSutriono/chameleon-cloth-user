@@ -1,0 +1,39 @@
+<div class="flex justify-center mt-5">
+    <nz-alert
+      nzType="success"
+      nzMessage="Transaksi anda berhasil, silahkan melakukan pembayaran ke rekening kami, untuk detail dapat dilihat dengan klik button konfirmasi berikut"
+      nzShowIcon
+      nzCloseable
+      class="mt-5 col-8 font-semibold"
+    ></nz-alert>
+</div>
+<div class="flex justify-center py-5">
+    <div class="flex flex-col lg:flex-row justify-between items-start col-8 gap-3">
+        <div class="flex justify-center flex-col col-lg-4 col-12">
+            <span class="uppercase text-xl font-bold text-center">Account</span>
+            <div class="border rounded p-4 mt-5 flex flex-col text-center">
+                <span class="text-lg font-bold mb-3">Wong Cilongok <a href="/edit-profile" class="ml-3"><span nz-icon nzType="edit" nzTheme="outline"></span></a></span>
+                <hr>
+                <div class="mt-3 flex gap-2 items-start">
+                    <span nz-icon nzType="environment" nzTheme="outline" class="mt-1"></span>
+                    <span class="text-start">
+                        Jalan Cilongok, Desa Cilongok RT01/07 Kecamatan Kaligondang Kabupaten Purbalingga 53390
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center flex-col col-lg-8 col-12">
+            <span class="uppercase text-xl font-bold text-center">Order</span>
+            <div class="border rounded p-4 mt-5 flex flex-col text-start">
+                <span class="bg-gray-600 text-white w-[150px] h-[20px] flex items-center justify-center text-[10px] rounded">Menunggu Pembayaran</span>
+                <span class="mt-2">Order Number :</span>
+                <a href="" class="underline text-blue-600 font-semibold">CHA-24202412192215-012</a>
+                <hr class="mt-4">
+                <div class="flex flex-col lg:flex-row justify-between items-center mt-4">
+                    <span class="text-lg font-semibold">Rp 450,000</span>
+                    <button class="btn btn-sm bg-black text-white">Konfirmasi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

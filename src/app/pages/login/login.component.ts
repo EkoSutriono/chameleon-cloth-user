@@ -16,7 +16,6 @@ export class LoginComponent {
   validateForm = this.fb.group({
     username: this.fb.control('', [Validators.required]),
     password: this.fb.control('', [Validators.required]),
-    remember: this.fb.control(true)
   });
 
   constructor(private fb: NonNullableFormBuilder) {}
