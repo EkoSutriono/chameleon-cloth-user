@@ -1,0 +1,118 @@
+<div class="flex justify-center mt-5">
+    <span class="uppercase text-xl font-bold text-center">MY PROFILE</span>
+</div>
+<div class="flex justify-center pb-5">
+    <div class="flex flex-col lg:flex-row justify-between items-start col-8 gap-3">
+        <div class="flex justify-center flex-col col-lg-4 col-12">
+            <div class="border rounded p-4 mt-5 flex flex-col text-center">
+                <span class="text-lg font-bold mb-3">Wong Cilongok <span nz-icon nzType="edit" nzTheme="outline" class="ml-3"></span></span>
+                <hr>
+                <div class="mt-3 flex gap-2 items-start">
+                    <span nz-icon nzType="environment" nzTheme="outline" class="mt-1"></span>
+                    <span class="text-start">
+                        Jalan Cilongok, Desa Cilongok RT01/07 Kecamatan Kaligondang Kabupaten Purbalingga 53390
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center flex-col col-lg-8 col-12">
+            <div class="border rounded p-4 mt-5 flex flex-col text-start">
+                <span class="uppercase text-xl font-bold text-center">Edit Profile</span>
+                <div class="flex justify-between mt-3 gap-3">
+                    <div class="col-6">
+                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-3" (ngSubmit)="submitForm()">
+                            <nz-form-item class="flex flex-col">
+                              <nz-form-label nzFor="username" class="text-start">Username</nz-form-label>
+                              <nz-form-control>
+                                <input nz-input formControlName="username" id="username" class="rounded" />
+                              </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                              <nz-form-label nzFor="email" class="text-start">E-mail</nz-form-label>
+                              <nz-form-control>
+                                <input nz-input formControlName="email" id="email" class="rounded"/>
+                              </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                                <nz-form-label nzFor="address2" class="text-start">Alamat 1</nz-form-label>
+                                <nz-form-control>
+                                  <input nz-input type="text-area" id="address1" formControlName="address1"  class="rounded"/>
+                                </nz-form-control>
+                              </nz-form-item>
+                              <nz-form-item class="flex flex-col">
+                                <nz-form-label nzFor="checkPassword" class="text-start">Provinsi</nz-form-label>
+                                <nz-form-control>
+                                  <nz-select formControlName="province" nzShowSearch nzAllowClear nzPlaceHolder="Pilih Provinsi" [(ngModel)]="selectedKabupaten">
+                                      <nz-option nzLabel="Cilongok" nzValue="Cilongok"></nz-option>
+                                      <nz-option nzLabel="Penolih" nzValue="Penolih"></nz-option>
+                                      <nz-option nzLabel="Tunjungmuli" nzValue="Tunjungmuli"></nz-option>
+                                    </nz-select>
+                                </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item class="flex flex-col">
+                                    <nz-form-label nzFor="checkPassword" class="text-start">Kecamatan</nz-form-label>
+                                    <nz-form-control>
+                                      <nz-select formControlName="district" nzShowSearch nzAllowClear nzPlaceHolder="Pilih Kecamatan" [(ngModel)]="selectedKabupaten">
+                                          <nz-option nzLabel="Cilongok" nzValue="Cilongok"></nz-option>
+                                          <nz-option nzLabel="Penolih" nzValue="Penolih"></nz-option>
+                                          <nz-option nzLabel="Tunjungmuli" nzValue="Tunjungmuli"></nz-option>
+                                        </nz-select>
+                                    </nz-form-control>
+                                    </nz-form-item>
+                            <nz-form-item nz-row class="register-area pt-5">
+                                <nz-form-control>
+                                  <button nz-button nzType="primary" class="rounded w-100">Register</button>
+                                </nz-form-control>
+                              </nz-form-item>
+                          </form>
+                    </div>
+                    <div class="col-6">
+                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-3" (ngSubmit)="submitForm()">
+                            <nz-form-item class="flex flex-col">
+                              <nz-form-label nzFor="fullname" class="text-start">Nama Lengkap</nz-form-label>
+                              <nz-form-control>
+                                <input nz-input formControlName="fullname" id="fullname"  class="rounded"/>
+                              </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                                <nz-form-label nzFor="phoneNumber" class="text-start">Phone Number</nz-form-label>
+                                <nz-form-control
+                                  [nzValidateStatus]="validateForm.controls['phoneNumber']"
+                                >
+                                  <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate"class="rounded-r-none rounded-l">
+                                    <ng-template #addOnBeforeTemplate>
+                                      <span class="rounded-r-none rounded-l">+62</span>
+                                    </ng-template>
+                                    <input type="number" formControlName="phoneNumber" id="'phoneNumber'" nz-input class="rounded-l-none rounded-r" />
+                                  </nz-input-group>
+                                </nz-form-control>
+                              </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                              <nz-form-label nzFor="address2" class="text-start">Alamat 2</nz-form-label>
+                              <nz-form-control>
+                                <input nz-input type="text-area" id="address2" formControlName="address2"  class="rounded"/>
+                              </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                              <nz-form-label nzFor="checkPassword" class="text-start">Kabupaten</nz-form-label>
+                              <nz-form-control>
+                                <nz-select formControlName="city" nzShowSearch nzAllowClear nzPlaceHolder="Pilih Kabupaten" [(ngModel)]="selectedKabupaten">
+                                    <nz-option nzLabel="Cilongok" nzValue="Cilongok"></nz-option>
+                                    <nz-option nzLabel="Penolih" nzValue="Penolih"></nz-option>
+                                    <nz-option nzLabel="Tunjungmuli" nzValue="Tunjungmuli"></nz-option>
+                                  </nz-select>
+                              </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="flex flex-col">
+                                <nz-form-label nzFor="email" class="text-start">Kode Pos</nz-form-label>
+                                <nz-form-control>
+                                  <input type="number" nz-input formControlName="zipCode" id="email"  class="rounded"/>
+                                </nz-form-control>
+                              </nz-form-item>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

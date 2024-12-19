@@ -15,6 +15,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 export class RegisterComponent {
   validateForm = this.fb.group({
       email: this.fb.control('', [Validators.required]),
+      username: this.fb.control('', [Validators.required]),
+      password: this.fb.control('', [Validators.required]),
+      confirmPassword: this.fb.control('', [Validators.required]),
     });
   
     constructor(private fb: NonNullableFormBuilder) {}

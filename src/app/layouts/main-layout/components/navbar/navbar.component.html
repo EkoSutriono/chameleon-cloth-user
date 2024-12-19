@@ -1,54 +1,136 @@
-<div class="bg-black flex justify-center">
-    <a class="bg-black lg:hidden flex p-2 btn btn-ghost col-4 col-md-2" href="/">
-      <img src="https://chameleoncloth.com/assets/images/chameleoncloth.png" alt="logo">
+<nz-header class="p-0">
+  <div class="bg-black flex justify-center">
+    <a
+      class="bg-black lg:hidden flex p-2 btn btn-ghost col-4 col-md-2"
+      href="/"
+    >
+      <img
+        src="https://chameleoncloth.com/assets/images/chameleoncloth.png"
+        alt="logo"
+      />
     </a>
   </div>
   <div class="bg-[#fadfcb] hidden lg:flex text-xs p-1 px-4 text-[#323232]">
     <span class="col-3 text-bold font-bold">#Authentic</span>
-    <span class="col-6 text-center justify-center">Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span>
+    <span class="col-6 text-center justify-center"
+      >Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span
+    >
     <span class="col-3 flex justify-end font-bold">Cara Pemesanan</span>
   </div>
-  <div class="navbar bg-black sticky min-h-1 p-1" 
-  style="z-index: 99">
-        <div class="col-4">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
-              <img src="https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/menu.svg" alt="menu">
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content rounded-br-lg bg-black w-52 p-4 shadow text-[#ececec] ml-[-10px] gap-1 uppercase">
-              <span class="text-lg text-white font-bold">Kategori</span> 
-              <div *ngFor="let items of categories; let i = index">
-                <li><a>{{items.name}}</a></li><hr>
-              </div>
-  
-              <span class="text-lg text-white font-bold mt-2">Payment</span>
-              <span class="text-lg text-white font-bold">Akun</span>
-            </ul>
+  <div class="navbar bg-black sticky min-h-1 p-1">
+    <div class="col-4">
+      <div class="dropdown">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost lg:hidden text-white"
+        >
+          <img
+            src="https://storage.googleapis.com/komerce/assets/komerce-icon/Putih/menu.svg"
+            alt="menu"
+          />
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content rounded-br-lg bg-black w-52 p-4 shadow text-[#ececec] ml-[-10px] gap-1 uppercase"
+        >
+          <span class="text-lg text-white font-bold">Kategori</span>
+          <div *ngFor="let items of categories; let i = index">
+            <li>
+              <a>{{ items.name }}</a>
+            </li>
+            <hr />
           </div>
-          <a class="lg:flex hidden btn btn-ghost col-3" href="/">
-            <img src="https://chameleoncloth.com/assets/images/chameleoncloth.png" alt="logo">
-          </a>
-        </div>
-        <div class="col-4 justify-center hidden lg:flex text-white">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>KOLEKSI</a></li>
-            <li><a>PAYMENT</a></li>
-          </ul>
-        </div>
-        <div class="col-4 flex justify-end text-white px-4 gap-2">
-          <span nz-icon nzType="user" nzTheme="outline" class="btn p-0 btn-ghost text-white text-[20px] hidden lg:flex"></span>
-          <div class="btn btn-ghost p-0">
-            <nz-badge [nzCount]="99" nzSize="small" nzShowZero [nzStyle]="{ backgroundColor: 'black', boxShadow: '0 0 0 1px #000000' }">
-              <span nz-icon nzType="shopping-cart" nzTheme="outline" class="p-1 text-white text-[20px]"></span>
-            </nz-badge>
-          </div>
-          <a href="/login">
-            <span nz-icon nzType="login" nzTheme="outline" class="btn btn-ghost p-0 text-white text-[20px] hidden lg:flex"></span>
-          </a>
-        </div>
+
+          <span class="text-lg text-white font-bold mt-2">
+            <a href="/profile"> Payment </a>
+          </span>
+          <span class="text-lg text-white font-bold">Akun</span>
+        </ul>
+      </div>
+      <a class="lg:flex hidden btn btn-ghost col-3" href="/">
+        <img
+          src="https://chameleoncloth.com/assets/images/chameleoncloth.png"
+          alt="logo"
+        />
+      </a>
     </div>
-    <div class="bg-[#f3f3f373] flex lg:hidden text-sm py-2 px-4 justify-center shadow-lg sticky">
-      <span class="text-center">Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span>
+    <div
+      class="col-4 justify-center hidden lg:flex text-white hover:text-[#353535]"
+    >
+      <ul class="menu menu-horizontal px-1">
+        <li
+          nz-dropdown
+          [nzDropdownMenu]="menu"
+          [nzClickHide]="true"
+          nzPlacement="bottomCenter"
+        >
+          <a>KOLEKSI</a>
+        </li>
+        <li><a href="/profile" class="text-white hover:text-[#353535]">PAYMENT</a></li>
+      </ul>
     </div>
+    <div class="col-4 flex justify-end text-white px-4 gap-2">
+      <a href="/profile">
+        <span
+          nz-icon
+          nzType="user"
+          nzTheme="outline"
+          class="btn p-0 btn-ghost text-white text-[20px] hidden lg:flex"
+        ></span>
+      </a>
+      <button class="btn btn-ghost p-0" (click)="collapseClick()">
+        <nz-badge
+          [nzCount]="99"
+          nzSize="small"
+          nzShowZero
+          [nzStyle]="{
+            backgroundColor: 'black',
+            boxShadow: '0 0 0 1px #000000'
+          }"
+        >
+          <span
+            nz-icon
+            nzType="shopping-cart"
+            nzTheme="outline"
+            class="p-1 text-white text-[20px]"
+          ></span>
+        </nz-badge>
+      </button>
+      <a href="/login">
+        <span
+          nz-icon
+          nzType="login"
+          nzTheme="outline"
+          class="btn btn-ghost p-0 text-white text-[20px] hidden lg:flex"
+        ></span>
+      </a>
+    </div>
+  </div>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <div
+      nz-menu
+      class="bg-[#000000d2] text-sm xl:min-w-[5000px] lg:min-w-[1280px] py-4"
+    >
+      <div class="flex flex-col justify-center gap-2 xl:ml-96 lg:ml-60">
+        <li class="list-none text-white hover:text-black" nz-menu-item>
+          <a>Semua Produk</a>
+        </li>
+        @for (items of categories; track items) {
+        <li class="list-none text-white hover:text-black" nz-menu-item>
+          <a>{{ items.name }}</a>
+        </li>
+        }
+      </div>
+    </div>
+  </nz-dropdown-menu>
+  <div
+    class="bg-[#f3f3f373] flex lg:hidden text-sm py-2 px-4 justify-center shadow-lg sticky"
+  >
+    <span class="text-center"
+      >Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span
+    >
+  </div>
+</nz-header>
+
+<app-cart-drawer [visible]="visible" (closeDrawer)="onDrawerClose()" />
