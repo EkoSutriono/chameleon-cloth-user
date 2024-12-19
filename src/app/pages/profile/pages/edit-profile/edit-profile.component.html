@@ -1,4 +1,4 @@
-<div class="flex justify-center mt-5">
+<div class="flex justify-center mt-5 pt-5">
     <span class="uppercase text-xl font-bold text-center">MY PROFILE</span>
 </div>
 <div class="flex justify-center pb-5">
@@ -18,9 +18,9 @@
         <div class="flex justify-center flex-col col-lg-8 col-12">
             <div class="border rounded p-4 mt-5 flex flex-col text-start">
                 <span class="uppercase text-xl font-bold text-center">Edit Profile</span>
-                <div class="flex justify-between mt-3 gap-3">
-                    <div class="col-6">
-                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-3" (ngSubmit)="submitForm()">
+                <div class="flex flex-col lg:flex-row justify-between mt-3 gap-3">
+                    <div class="col-12 col-lg-6">
+                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-lg-3 gap-1" (ngSubmit)="submitForm()">
                             <nz-form-item class="flex flex-col">
                               <nz-form-label nzFor="username" class="text-start">Username</nz-form-label>
                               <nz-form-control>
@@ -59,15 +59,15 @@
                                         </nz-select>
                                     </nz-form-control>
                                     </nz-form-item>
-                            <nz-form-item nz-row class="register-area pt-5">
+                            <nz-form-item nz-row class="register-area pt-5 lg:flex hidden">
                                 <nz-form-control>
                                   <button nz-button nzType="primary" class="rounded w-100">Register</button>
                                 </nz-form-control>
                               </nz-form-item>
                           </form>
                     </div>
-                    <div class="col-6">
-                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-3" (ngSubmit)="submitForm()">
+                    <div class="col-12 col-lg-6">
+                        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-lg-3 gap-1" (ngSubmit)="submitForm()">
                             <nz-form-item class="flex flex-col">
                               <nz-form-label nzFor="fullname" class="text-start">Nama Lengkap</nz-form-label>
                               <nz-form-control>
@@ -107,6 +107,11 @@
                                 <nz-form-label nzFor="email" class="text-start">Kode Pos</nz-form-label>
                                 <nz-form-control>
                                   <input type="number" nz-input formControlName="zipCode" id="email"  class="rounded"/>
+                                </nz-form-control>
+                              </nz-form-item>
+                              <nz-form-item nz-row class="register-area pt-5 flex lg:hidden">
+                                <nz-form-control>
+                                  <button nz-button nzType="primary" class="rounded w-100">Register</button>
                                 </nz-form-control>
                               </nz-form-item>
                           </form>
