@@ -1,10 +1,10 @@
 <div class="mt-[-9%] lg:mt-0">
-    <img src="https://chameleoncloth.com/assets/images/bg_all/PGE6.png" alt="main-product">
+    <img src="https://chameleoncloth.com/assets/images/bg_all/PGE6.png" alt="main-product" class="cursor-pointer" (click)="navigateToDetail('Premium Basic Suit - Green Emerald')">
     <div class="bg-black text-center text-white text-[25px] font-bold py-5">
         NEW ARRIVAL
     </div>
     <div class="flex lg:justify-center py-5 gap-3 lg:overflow-x-hidden overflow-x-auto sm:overflow-x-scroll">
-        <div *ngFor="let items of listProduct; let i = index" class="bg-white w-[320px] shadow border-0 flex-shrink-0 rounded-md">
+        <div *ngFor="let items of listProduct; let i = index" class="bg-white w-[320px] shadow border-0 flex-shrink-0 rounded-md cursor-pointer" (click)="navigateToDetail(items.name)">
             <figure class="px-2 pt-2">
                 <img
                     [src]="items.photo"
