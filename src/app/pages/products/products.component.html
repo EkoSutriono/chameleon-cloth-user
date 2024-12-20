@@ -1,0 +1,74 @@
+<div class="py-5">
+  <div class="flex justify-center">
+    <div class="flex flex-col lg:flex-row justify-between items-start col-lg-10 col-xl-8 gap-3">
+        <div class="flex justify-center flex-col col-lg-5 col-12">
+          <nz-ribbon nzText="Premium" nzColor="red" nzPlacement="start">
+          <div
+            class="img_product_container cursor-crosshair"
+            (mouseover)="onMouseOver()"
+            (mouseout)="onMouseOut()"
+            (mousemove)="onMouseMove($event, container)"
+            #container
+          >
+            <div
+              class="img_product"
+              [style.backgroundImage]="'url(' + imageUrl + ')'"
+              [style.transform]="transformStyle"
+              [style.transformOrigin]="transformOrigin"
+            ></div>
+          </div>
+          </nz-ribbon>
+          <div class="mt-3 flex overflow-x-scroll scroll-smooth gap-3">
+            <img class="w-[100px] h-[140px] rounded" src="https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg" alt="preview">
+            <img class="w-[100px] h-[140px] rounded" src="https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg" alt="preview">
+            <img class="w-[100px] h-[140px] rounded" src="https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg" alt="preview">
+            <img class="w-[100px] h-[140px] rounded" src="https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg" alt="preview">
+            <img class="w-[100px] h-[140px] rounded" src="https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg" alt="preview">
+          </div>
+        </div>
+        <div class="flex justify-center flex-col col-lg-7 lg:px-0 px-3">
+            <span class="capitalize text-xl font-bold">{{ productName }}</span>
+            <span class="text-red-500 text-lg font-semibold mb-3">Rp 650,000</span>
+            <hr>
+            <div class="text-center mt-3 mb-3">
+              <span>Select your size:</span>
+              <div class="flex mt-3 justify-center">
+                <nz-radio-group [(ngModel)]="selectedSize" nzSize="large" class="flex flex-wrap gap-3 justify-center">
+                  <label class="w-[100px]" nz-radio-button nzValue="S">S</label>
+                  <label class="w-[100px]" nz-radio-button nzValue="M">M</label>
+                  <label class="w-[100px]" nz-radio-button nzValue="L">L</label>
+                  <label class="w-[100px]" nz-radio-button nzValue="XL">XL</label>
+                </nz-radio-group>
+              </div>
+            </div>
+            <hr>
+            <div class="flex justify-end gap-2 font-bold mt-3 mb-3">
+              <span>Size Chart*</span>
+              <span>Find My Fit*</span>
+            </div>
+            <hr>
+            <div class="flex flex-col mt-3 mb-3">
+              <span>Jumlah:</span>
+              <div class="flex gap-2 mt-2">
+                <button class="btn-outline border-[#c5c5c5] text-black h-[40px] w-[30px] btn" (click)="minTotal()">-</button>
+                <button class="btn-outline border-[#c5c5c5] text-black h-[40px] w-[30px] btn">{{ total }}</button>
+                <button class="btn-outline border-[#c5c5c5] text-black h-[40px] w-[30px] btn" (click)="addTotal()">+</button>
+              </div>
+              <button class="bg-black col-12 rounded-xl text-white mt-5 btn">ADD TO CART</button>
+            </div>
+            <hr>
+            <div class="text-center mt-3 flex flex-col">
+              <span class="text-lg font-bold text-[#424242]">Details</span>
+              <p class="text-start col-12">
+                Dengan desain slim fit yang mengikuti perubahan style para pria. Berani tampil lebih stylish adalah pilihan para pria gentlement.
+                Model yang simple dan minimalist mampu membuat penampilanmu lebih keren.
+                <br>
+                Warna yang terlihat pada gambar mungkin tidak 100% sama dengan produk yang sebenarnya, disebabkan faktor cahaya pada pengambilan gambar, atau kondisi gadget yang digunakan untuk melihat gambar.
+                <br>
+                Untuk pembelian Online, mohon pertimbangkan toleransi selisih perbedaan warna dan size, apabila setelah barang diterima perbedaan dianggap terlalu jauh, silahkan ajukan penukaran barang.
+              </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

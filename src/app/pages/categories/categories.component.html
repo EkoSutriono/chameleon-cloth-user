@@ -1,0 +1,49 @@
+<div class="">
+  <div class="banner-category lg:h-[355px] xl:h-[370px]">
+    <div class="flex justify-center px-5">
+      <span
+        class="uppercase text-white font-semibold lg:h-80 h-60 py-5 lg:py-0 grid content-end lg:text-[40px] text-[30px] col-lg-8 col-12"
+      >
+        {{ handleName(category) }}
+      </span>
+    </div>
+  </div>
+  <div class="py-5 flex justify-center">
+    <div class="grid grid-cols-2 gap-4">
+      <div
+        *ngFor="let items of listProduct; let i = index"
+        class="bg-white xl:w-[500px] lg:w-[300px] md:w-[250px] w-[160px] shadow border-0 flex-shrink-0 rounded-md"
+        (click)="navigateToDetail(items.name)"
+      >
+        <figure class="px-2 pt-2">
+          <img
+            [src]="items.photo"
+            [alt]="items.name"
+            class="rounded-xl lg:min-h-[200px] min-h-[100px]"
+          />
+        </figure>
+        <div class="card-body py-0 px-3 mt-1 mb-2">
+          <div class="flex gap-1">
+            <span
+              class="bg-black rounded-xl h-[15px] px-2 w-fit flex align-middle justify-center text-[10px] text-white"
+              >NEW</span
+            >
+            <span
+              class="bg-red-600 rounded-xl h-[15px] px-2 w-fit flex align-middle justify-center text-[10px] text-white"
+              >SOLD OUT</span
+            >
+          </div>
+          <span
+            class="uppercase text-sm font-bold inline-block align-top min-h-[60px] lg:min-h-[40px]"
+          >
+            {{ items.name }}</span
+          >
+          <div class="flex gap-2">
+            <!-- <span class="text-secondary font-bold line-through">Rp 550,000</span> -->
+            <span class="text-red-500 font-bold">Rp 550,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
