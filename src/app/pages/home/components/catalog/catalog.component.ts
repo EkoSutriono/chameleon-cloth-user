@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -51,5 +52,12 @@ export class CatalogComponent {
       photo: 'https://chameleoncloth.com/assets/uploads/thumbnail_new_arrival/CC-14-202309082125-010_0.jpg',
     },
   ]
+constructor(
+    public route: Router,
+  ) {}
 
+  navigateToDetail(items: any) {
+    const productName = btoa(items);
+    this.route.navigate(['detail'], { queryParams: { product: productName } });
+  }
 }

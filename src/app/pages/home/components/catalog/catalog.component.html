@@ -4,7 +4,8 @@
 <div class="col-12 col-lg-12 col-xl-10 col-md-8 flex flex-wrap gap-3 justify-center">
     <div
       *ngFor="let items of listProduct; let i = index"
-      class="bg-white xl:w-[320px] lg:w-[280px] w-[160px] shadow border-0 flex-shrink-0 rounded-md"
+      class="bg-white xl:w-[320px] lg:w-[280px] w-[160px] shadow border-0 flex-shrink-0 rounded-md cursor-pointer"
+      (click)="navigateToDetail(items.name)"
     >
       <figure class="px-2 pt-2">
         <img
