@@ -1,5 +1,12 @@
 <nz-affix>
   <nz-header class="p-0">
+    <div class="bg-[#fadfcb] flex justify-center text-xs p-1 px-4 text-[#323232]">
+      <span class="col-3 text-bold font-bold hidden md:flex">#Authentic</span>
+      <span class="col-12 col-md-6 text-center justify-center"
+        >Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span
+      >
+      <span class="col-3 justify-end font-bold hidden md:flex">Cara Pemesanan</span>
+    </div>
     <div class="bg-black flex justify-center">
       <a
         class="bg-black lg:hidden flex p-2 btn btn-ghost col-4 col-md-2"
@@ -10,13 +17,6 @@
           alt="logo"
         />
       </a>
-    </div>
-    <div class="bg-[#fadfcb] hidden lg:flex text-xs p-1 px-4 text-[#323232]">
-      <span class="col-3 text-bold font-bold">#Authentic</span>
-      <span class="col-6 text-center justify-center"
-        >Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span
-      >
-      <span class="col-3 flex justify-end font-bold">Cara Pemesanan</span>
     </div>
     <div class="navbar bg-black sticky min-h-1 p-1">
       <div class="col-4">
@@ -50,6 +50,7 @@
             [nzDropdownMenu]="menu"
             [nzClickHide]="true"
             nzPlacement="bottomCenter"
+            nzTrigger="click"
           >
             <a>KOLEKSI</a>
           </li>
@@ -98,9 +99,10 @@
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <div
         nz-menu
-        class="bg-[#000000d2] text-sm xl:min-w-[5000px] lg:min-w-[1280px] py-4"
+        class="bg-[#000000d2] flex justify-center text-sm xl:min-w-[2000px] lg:min-w-[1280px] py-4"
       >
-        <div class="flex flex-col justify-center gap-2 xl:ml-96 lg:ml-60">
+      <div class="flex justify-center xl:ml-[-400px] lg:ml-[-100px]">
+        <div class="grid grid-cols-3 gap-2">
           <li
             (click)="this.route.navigate(['/category/all-product'])"
             class="list-none text-white hover:text-black"
@@ -113,11 +115,12 @@
             (click)="this.route.navigate(['/category/', items.name])"
             class="list-none text-white hover:text-black"
             nz-menu-item
-          >
+          > 
             {{ items.name }}
           </li>
           }
         </div>
+      </div>
       </div>
     </nz-dropdown-menu>
     <nz-dropdown-menu #menuM="nzDropdownMenu">
@@ -140,13 +143,6 @@
         </div>
       </div>
     </nz-dropdown-menu>
-    <div
-      class="bg-[#f3f3f373] flex lg:hidden text-sm py-2 px-4 justify-center shadow-lg sticky"
-    >
-      <span class="text-center"
-        >Get Free Shipping <b>10,000</b> with Voucher Code <b>FREONG</b></span
-      >
-    </div>
   </nz-header>
 </nz-affix>
 

@@ -5,6 +5,8 @@ import { ProfileComponent } from '../../pages/profile/profile.component';
 import { EditProfileComponent } from '../../pages/profile/pages/edit-profile/edit-profile.component';
 import { CategoriesComponent } from '../../pages/categories/categories.component';
 import { ProductsComponent } from '../../pages/products/products.component';
+import { OrderComponent } from '../../pages/order/order.component';
+import { OrderDetailComponent } from '../../pages/order/order-detail/order-detail.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,14 @@ const routes: Routes = [
       {
         path: 'detail',
         component: ProductsComponent,
+      },
+      {
+        path: 'order',
+        component: OrderComponent,
+      },
+      {
+        path: 'detail-order',
+        component: OrderDetailComponent,
       },
 ]
 
