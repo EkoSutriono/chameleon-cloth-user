@@ -1,0 +1,26 @@
+<nz-modal [(nzVisible)]="isVisibleFit" nzTitle="Fit Advisor" [nzFooter]="null" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <form nz-form [formGroup]="validateForm" class="flex flex-col gap-lg-3 gap-1" (ngSubmit)="submitForm()">
+            <nz-form-item class="flex flex-col">
+              <nz-form-label nzFor="weight" class="text-start font-bold">Berat</nz-form-label>
+              <nz-form-control>
+                <input nz-input formControlName="weight" id="weight"  class="rounded"/>
+                <span>Kg</span>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item class="flex flex-col pb-4 mt-3">
+              <nz-form-label nzFor="height" class="text-start font-bold">Tinggi</nz-form-label>
+              <nz-form-control>
+                <input nz-input formControlName="height" id="height"  class="rounded"/>
+                <span>Cm</span>
+              </nz-form-control>
+            </nz-form-item>
+            <hr class="pb-2">
+            <nz-form-item nz-row>
+                <nz-form-control>
+                  <button nz-button class="bg-black text-white rounded w-100 btn-md">Continue</button>
+                </nz-form-control>
+              </nz-form-item>
+        </form>
+    </ng-container>
+  </nz-modal>
