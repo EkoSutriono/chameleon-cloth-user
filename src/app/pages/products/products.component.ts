@@ -4,11 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { ModalSizeChartComponent } from "../../libs/components/modal-size-chart/modal-size-chart.component";
+import { ModalFitAdvisorComponent } from '../../libs/components/modal-fit-advisor/modal-fit-advisor.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NzImageModule, NzRadioModule, FormsModule, NzBadgeModule],
+  imports: [NzImageModule, NzRadioModule, FormsModule, NzBadgeModule, ModalSizeChartComponent, ModalFitAdvisorComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -18,6 +20,8 @@ export class ProductsComponent {
   total: number = 0
   imageUrl: string = 'https://chameleoncloth.com/assets/uploads/thumbnail_produk/G-34-202411270906-006_0.jpg'
   scale: number = 1.6;
+  openModalSize: boolean = false;
+  openModalFit: boolean = false;
 
   transformStyle: string = 'scale(1)';
   transformOrigin: string = '50% 50%';
@@ -52,5 +56,20 @@ export class ProductsComponent {
     const offsetX = ((event.clientX - rect.left) / rect.width) * 100;
     const offsetY = ((event.clientY - rect.top) / rect.height) * 100;
     this.transformOrigin = `${offsetX}% ${offsetY}%`;
+  }
+
+  openSizeChart() {
+    this.openModalSize = true
+  }
+
+  closeModalSize() {
+    this.openModalSize = false
+  }
+  openFitChart() {
+    this.openModalFit = true
+  }
+
+  closeModalFit() {
+    this.openModalFit = false
   }
 }

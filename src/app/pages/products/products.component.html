@@ -43,8 +43,8 @@
             </div>
             <hr>
             <div class="flex justify-end gap-2 font-bold mt-3 mb-3">
-              <span>Size Chart*</span>
-              <span>Find My Fit*</span>
+              <span class="cursor-pointer" (click)="openSizeChart()">Size Chart*</span>
+              <span class="cursor-pointer" (click)="openFitChart()">Find My Fit*</span>
             </div>
             <hr>
             <div class="flex flex-col mt-3 mb-3">
@@ -72,3 +72,5 @@
     </div>
   </div>
 </div>
+<app-modal-size-chart [isVisible]="openModalSize" (closeModalSize)="closeModalSize()"></app-modal-size-chart>
+<app-modal-fit-advisor [isVisibleFit]="openModalFit" (closeModalFit)="closeModalFit()"></app-modal-fit-advisor>
